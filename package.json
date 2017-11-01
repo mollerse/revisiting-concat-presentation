@@ -1,0 +1,50 @@
+{
+  "name": "revisiting-concat-presentation",
+  "version": "1.0.0",
+  "description": "Presentation on concatenative languages",
+  "main": "index.js",
+  "scripts": {
+    "start":
+      "budo slides.js -s index.js --live --open -- -t [ babelify --presets [ es2015 react ] ] -t brfs",
+    "build":
+      "browserify slides.js -o index.js -t [ babelify --presets [ es2015 react ] ] -t brfs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mollerse/revisiting-concat-presentation.git"
+  },
+  "keywords": ["presentation"],
+  "author": "Stian Møllersen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mollerse/revisiting-concat-presentation/issues"
+  },
+  "homepage":
+    "https://github.com/mollerse/revisiting-concat-presentation#readme",
+  "devDependencies": {
+    "babel-plugin-transform-object-rest-spread": "^6.8.0",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-react": "^6.11.1",
+    "babelify": "^7.3.0",
+    "brfs": "^1.4.3",
+    "brfs-babel": "^1.0.0",
+    "browserify": "^13.3.0",
+    "budo": "^9.0.0",
+    "eslint": "^3.4.0",
+    "eslint-plugin-react": "^6.2.0",
+    "prismjs": "^1.6.0",
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1",
+    "spectacle": "^1.2.0"
+  },
+  "babel": {
+    "plugins": ["transform-object-rest-spread"]
+  },
+  "dependencies": {
+    "ait-canvas": "0.4.2",
+    "ait-dom": "0.3.0",
+    "ait-lang": "0.3.1",
+    "ait-animation": "0.3.0",
+    "react-codemirror": "^0.2.6"
+  }
+}

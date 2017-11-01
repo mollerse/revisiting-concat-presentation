@@ -1,0 +1,38 @@
+rotateAroundCenter:
+  250 250 translate
+  rotate
+  -250 -250 translate ;
+
+shiftX: 0 translate ;
+
+drawWithNeonEffect:
+  color shadowColor
+  "lighter" globalCompositeOperation
+  10 shadowBlur
+  [0.25 0.5 0.75 1]
+  [ lineWidth dup exec ]
+  step pop ;
+
+point: [] cons cons ;
+square:
+  2 / -> w
+  -> y
+  -> x
+  beginPath
+  x w - y w - point moveTo
+  x w - y w + point lineTo
+  x w + y w + point lineTo
+  x w + y w - point lineTo
+  closePath
+  stroke ;
+
+color: "cyan";
+
+color strokeStyle
+20
+[
+  PI 9 / rotateAroundCenter
+  -35 35 random2 shiftX
+  [ 250 250 200 square ] drawWithNeonEffect
+]
+times
